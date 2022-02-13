@@ -18,7 +18,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" name="username" placeholder="username">
+                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้งาน">
                         </div>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             </div>
-                            <input type="password" class="form-control" name="password" placeholder="password">
+                            <input type="password" class="form-control" name="password" placeholder="รหัสผ่าน">
                         </div>
                     </div>
             </div>
@@ -59,7 +59,7 @@
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
-                                <option selected disabled>เลือกชื่อผู้ใช้งาน</option>
+                                <option selected disabled>ชื่อผู้ใช้งาน</option>
                                 <option value="1">user One</option>
                                 <option value="2">user Two</option>
                                 <option value="3">user Three</option>
@@ -72,7 +72,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             </div>
-                            <input type="password" class="form-control" name="password" placeholder="password">
+                            <input type="password" class="form-control" name="password" placeholder="รหัสผ่าน">
                         </div>
                     </div>
             </div>
