@@ -1,4 +1,6 @@
 <?php
-$sql = "SELECT * FROM tb_department";
-$result = $conn->query($sql);
+    $query_department = "SELECT * FROM tb_department";
+    $query_department = $conn->query($query_department);
+
+    
 ?>

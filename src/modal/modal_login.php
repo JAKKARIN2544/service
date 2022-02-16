@@ -58,7 +58,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01">
+                            <select class="custom-select" >
                                 <option selected disabled>ชื่อผู้ใช้งาน</option>
                                 <option value="1">user One</option>
                                 <option value="2">user Two</option>
@@ -138,7 +138,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <?php
+                    //$a = MD5('user');
+                ?>
+                <form action="service.php?register=<?php echo MD5('user') ?>" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -147,7 +150,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-id-card"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="id_card" placeholder="รหัสประจำตัว">
+                                    <input type="text" class="form-control" name="id_ldentification" placeholder="รหัสประจำตัว">
                                 </div>
                             </div>
                         </div>
@@ -158,8 +161,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-at"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="email"
-                                        placeholder="service@example.com">
+                                    <input type="text" class="form-control" name="email" placeholder="service@example.com">
                                 </div>
                             </div>
                         </div>
@@ -172,7 +174,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="id_card" placeholder="ชื่อ">
+                                    <input type="text" class="form-control" name="frist_name" placeholder="ชื่อ">
                                 </div>
                             </div>
                         </div>
@@ -183,8 +185,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="text"
-                                        placeholder="นามสกุล">
+                                    <input type="text" class="form-control" name="last_name" placeholder="นามสกุล">
                                 </div>
                             </div>
                         </div>
@@ -210,8 +211,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" name="con-password"
-                                        placeholder="ยืนยัน รหัสผ่าน">
+                                    <input type="password" class="form-control" name="con-password" placeholder="ยืนยัน รหัสผ่าน">
                                 </div>
                             </div>
                         </div>
@@ -221,13 +221,13 @@
                             <div class="form-group">
                                 <label>ระดับชั้น<span class="text-danger">*</span></label>
                                 <div class="input-group mb-3">
-                                    <select class="custom-select" id="inputGroupSelect01">
+                                    <select class="custom-select"  name="class">
                                         <option selected disabled>เลือกระดับชั้น</option>
-                                        <option value="1">ปวช.1</option>
-                                        <option value="2">ปวช.2</option>
-                                        <option value="3">ปวช.3</option>
-                                        <option value="4">ปวส.1</option>
-                                        <option value="5">ปวส.2</option>
+                                        <option value="ปวช.1">ปวช.1</option>
+                                        <option value="ปวช.2">ปวช.2</option>
+                                        <option value="ปวช.3">ปวช.3</option>
+                                        <option value="ปวส.1">ปวส.1</option>
+                                        <option value="ปวส.2">ปวส.2</option>
                                     </select>
                                 </div>
                             </div>
@@ -235,12 +235,12 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>แผนก<span class="text-danger">*</span></label>
-                                <select class="custom-select" id="" name="">
+                                <select class="custom-select" name="department">
                                     <option selected disabled>กรุณาเลือกแผนก</option>
                                     <?php
-                                    if (mysqli_num_rows($result) > 1) {
+                                    if (mysqli_num_rows($query_department) > 1) {
                                         // output data of each row
-                                        while ($row = mysqli_fetch_assoc($result)) {
+                                        while ($row = mysqli_fetch_assoc($query_department)) {
                                     ?>
                                     <option value="<?php echo $row['dep_name'] ?>"><?php echo $row['dep_name'] ?></option>
                                     <?php
@@ -259,15 +259,14 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" name="phone"
-                                        placeholder="เบอร์โทรศัพท์">
+                                    <input type="text" class="form-control" name="phone"placeholder="เบอร์โทรศัพท์">
                                 </div>
                             </div>
                         </div>
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">สมัครสมาชิก</button>
+                <button type="submit" class="btn btn-primary" >สมัครสมาชิก</button>
                 </form>
             </div>
         </div>
