@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="service.php?login=<?php echo MD5('login_admin') ?>" method="POST">
                     <div class="form-group">
                         <label for="username">ชื่อผู้ใช้งาน<span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
@@ -32,7 +32,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-admin">เข้าสู่ระบบ</button>
+                <button type="submit" class="btn btn-primary btn-admin">เข้าสู่ระบบ</button>
                 </form>
             </div>
         </div>
@@ -51,14 +51,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="service.php?login=<?php echo ('login_office') ?>" method="POST">
                     <div class="form-group">
                         <label for="username">ชื่อผู้ใช้งาน<span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <select class="custom-select" >
+                            <select class="custom-select" name="username">
                                 <option selected disabled>ชื่อผู้ใช้งาน</option>
                                 <option value="1">user One</option>
                                 <option value="2">user Two</option>
@@ -77,7 +77,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-officer">เข้าสู่ระบบ</button>
+                <button type="submit" class="btn btn-primary btn-officer">เข้าสู่ระบบ</button>
                 </form>
             </div>
         </div>
@@ -96,7 +96,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="service.php?login=<?php echo MD5('login_user') ?>" method="POST">
                     <div class="form-group">
                         <label for="username">รหัสประจำตัว<span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
@@ -118,7 +118,7 @@
             </div>
             <div class="modal-footer">
                 <a class="text-warning mr-3" data-toggle="modal" href="#modal-register">สมัครสมาชิก</a>
-                <button type="button" class="btn btn-success">เข้าสู่ระบบ</button>
+                <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
             </div>
             </form>
         </div>
@@ -138,10 +138,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?php
-                    //$a = MD5('user');
-                ?>
-                <form action="service.php?register=<?php echo MD5('user') ?>" method="POST">
+                <form action="service.php?register=<?php echo MD5('reg_user') ?>" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

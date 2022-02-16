@@ -1,0 +1,23 @@
+<footer class="main-footer">
+    <strong>Copyright &copy; 2022 <a href="">SERVICE APP</a>.</strong>
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> Close beta Test
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<!-- ChartJS -->
+<script src="../assets/plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../assets/dist/js/adminlte.js"></script>
+</body>
+</html>

@@ -8,13 +8,11 @@
 
 <body>
 <?php   
-    include_once 'config/ConnectDB/connect.php';
-
-    if(!isset($_POST['id_ldentification']) && empty($_POST['id_ldentification'])){
+    if(empty($_POST['id_ldentification'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -24,11 +22,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['email']) && empty($_POST['email'])){
+    }else if(empty($_POST['email'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -38,11 +36,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['frist_name']) && empty($_POST['frist_name'])){
+    }else if(empty($_POST['frist_name'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -52,11 +50,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['last_name']) && empty($_POST['last_name'])){
+    }else if(empty($_POST['last_name'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -66,11 +64,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['password']) && empty($_POST['password'])){
+    }else if(empty($_POST['password'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -80,11 +78,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['class']) && empty($_POST['class'])){
+    }else if(empty($_POST['class'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -94,11 +92,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['department']) && empty($_POST['department'])){
+    }else if(empty($_POST['department'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -108,11 +106,11 @@
                                 }
                             });
                     </script>';
-    }else if(!isset($_POST['phone']) && empty($_POST['phone'])){
+    }else if(empty($_POST['phone'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
-                                title: "คำเตือน",
+                                title: "แจ้งเตือน",
                                 text: "กรุณากรอกข้อมูล !!!",
                                 showConfirmButton: false,
                                 timer: 3000
@@ -123,6 +121,8 @@
                             });
                     </script>';
     }else{
+        include_once 'config/ConnectDB/connect.php';
+        
         $string             = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $random_character   = $string[mt_rand(0, strlen($string) - 1)];
         $random_id          = date('i').date('s').rand(0,9);
