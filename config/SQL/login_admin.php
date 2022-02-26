@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +10,7 @@
 </head>
 
 <body>
-<?php  
+<?php 
     include_once 'config/ConnectDB/connect.php';
         if(empty($_POST['username'])){
             echo '<script type="text/javascript">
@@ -47,8 +50,7 @@
                 if(mysqli_num_rows($result)==1){
                     $row = mysqli_fetch_array($result);
 
-                    //$_SESSION["id"] = $row["id"];
-                    //$_SESSION["username"] = $row["username"];
+                    $_SESSION["id"] = $row["id"];
                     $_SESSION["level"] = $row["level"];
 
                     if($_SESSION["level"] === "admin"){ 
@@ -61,7 +63,7 @@
                                     timer: 3000
                                 }).then((result) => {
                                     if (result.isDismissed) {
-                                        window.location.href = "page/index_admin.php";
+                                        window.location.href = "service.php?Home=index_admin";
                                     }
                                 });
                         </script>';

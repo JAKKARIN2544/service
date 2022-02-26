@@ -8,7 +8,9 @@
 
 <body>
 <?php   
-    if(empty($_POST['id_ldentification'])){
+    //echo '<pre>';
+    //print_r($_POST);
+    if(empty($_POST['email'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
@@ -22,7 +24,7 @@
                                 }
                             });
                     </script>';
-    }else if(empty($_POST['email'])){
+    }else if(empty($_POST['id_card'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
@@ -36,7 +38,7 @@
                                 }
                             });
                     </script>';
-    }else if(empty($_POST['frist_name'])){
+    }else if(empty($_POST['fristname'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
@@ -50,7 +52,7 @@
                                 }
                             });
                     </script>';
-    }else if(empty($_POST['last_name'])){
+    }else if(empty($_POST['lastname'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
@@ -78,21 +80,7 @@
                                 }
                             });
                     </script>';
-    }else if(empty($_POST['class'])){
-        echo '<script type="text/javascript">
-                            Swal.fire({
-                                icon: "warning",                    
-                                title: "แจ้งเตือน",
-                                text: "กรุณากรอกข้อมูล !!!",
-                                showConfirmButton: false,
-                                timer: 3000
-                            }).then((result) => {
-                                if (result.isDismissed) {
-                                    window.history.back();
-                                }
-                            });
-                    </script>';
-    }else if(empty($_POST['department'])){
+    }else if(empty($_POST['con-password'])){
         echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "warning",                    
@@ -120,41 +108,52 @@
                                 }
                             });
                     </script>';
+    }else if(empty($_POST['level'])){
+        echo '<script type="text/javascript">
+                            Swal.fire({
+                                icon: "warning",                    
+                                title: "แจ้งเตือน",
+                                text: "กรุณากรอกข้อมูล !!!",
+                                showConfirmButton: false,
+                                timer: 3000
+                            }).then((result) => {
+                                if (result.isDismissed) {
+                                    window.history.back();
+                                }
+                            });
+                    </script>';
     }else{
         include_once 'config/ConnectDB/connect.php';
         
         $string             = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $random_character   = $string[mt_rand(0, strlen($string) - 1)];
         $random_id          = date('i').date('s').rand(0,9);
-        $user_id            = $random_character.$random_id;
-        $id_ldentification  = $_POST['id_ldentification'];
+        $officer_id         = $random_character.$random_id;
         $email              = $_POST['email'];
-        $frist_name         = $_POST['frist_name'];
-        $last_name          = $_POST['last_name'];
+        $id_card            = $_POST['id_card'];
+        $fristname          = $_POST['fristname'];
+        $lastname           = $_POST['lastname'];
         $password           = MD5($_POST['password']);
-        $class              = $_POST['class'];
-        $department         = $_POST['department'];
         $phone              = $_POST['phone'];
-        $user_level         = "user";
-        //echo '<pre>'; 
-        //print_r($_POST);
-        $sql1 = "INSERT INTO tb_login VALUE ('$user_id ','$id_ldentification','$password','$user_level')";
+        $level              = $_POST['level'];
+
+        $sql1 = "INSERT INTO tb_login VALUE ('$officer_id','$id_card','$password','$level')";
         $result1 = mysqli_query($conn, $sql1) or die ("Error in query: $sql1 " . mysqli_error());
         //--------------------------------------------------------------------------------------------------------
-        $sql2 = "INSERT INTO tb_users VALUE ('$user_id ','$id_ldentification','$email','$frist_name','$last_name','$class','$department','$phone','$user_level')";                 
+        $sql2 = "INSERT INTO tb_officer VALUE ('$officer_id ','$id_card','$email','$fristname','$lastname','$phone','$level')";                 
         $result2 = mysqli_query($conn, $sql2) or die ("Error in query: $sql2 " . mysqli_error());     
         mysqli_close($conn);
                 if ($result1 && $result2) {
                     echo '<script type="text/javascript">
                                     Swal.fire({
                                         icon: "success",                    
-                                        title: "สมัครสมาชิก สำเร็จ!",
+                                        title: "เพิ่มเจ้าหน้าที่ สำเร็จ",
                                         text: "ระบบ กำลังนำท่านไป...",
                                         showConfirmButton: false,
                                         timer: 3000
                                     }).then((result) => {
                                 if (result.isDismissed) {
-                                    window.location.href = "service.php?page=users";
+                                    window.location.href = "service.php?show='.MD5('show_officer').'";
                                 }
                             });
                         </script>';
@@ -162,13 +161,13 @@
                     echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "error",                    
-                                title: "สมัครสมาชิก",
-                                text: "สมัครสมาชิก ไม่สำเร็จ!!!",
+                                title: "เพิ่มเจ้าหน้าที่ ไม่สำเร็จ!!!",
+                                text: "กรุณาลองใหม่อีกครั้ง",
                                 showConfirmButton: false,
                                 timer: 3000
                             }).then((result) => {
                                 if (result.isDismissed) {
-                                    window.history.back();
+                                    window.location.href = "service.php?show='.MD5('show_officer').'";
                                 }
                             });
                     </script>';

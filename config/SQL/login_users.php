@@ -19,7 +19,7 @@
                                     timer: 2000
                                 }).then((result) => {
                                     if (result.isDismissed) {
-                                        window.location.href = "index.php";
+                                        window.history.back();
                                     }
                                 });
                         </script>';
@@ -33,7 +33,7 @@
                                     timer: 2000
                                 }).then((result) => {
                                     if (result.isDismissed) {
-                                        window.location.href = "index.php";
+                                        window.history.back();
                                     }
                                 });
                         </script>';
@@ -75,7 +75,7 @@
                                 timer: 3000
                             }).then((result) => {
                                 if (result.isDismissed) {
-                                    window.location.href = "index.php";
+                                    window.history.back();
                                 }
                             });
                         </script>';
@@ -90,7 +90,7 @@
                             timer: 3000
                         }).then((result) => {
                             if (result.isDismissed) {
-                                window.location.href = "index.php";
+                                window.history.back();
                             }
                         });
                     </script>';

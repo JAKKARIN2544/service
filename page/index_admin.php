@@ -1,10 +1,13 @@
-<?php require_once '../src/layout/admin/admin_header.php'?>
+<?php
+ if(!isset($_SESSION['id'])){ 
+?>
+<?php require_once 'src/layout/admin/admin_header.php'?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Navbar -->
-        <?php require_once '../src/layout/admin/admin_navbar.php'?>
+        <?php require_once 'src/layout/admin/admin_navbar.php'?>
         <!-- /.navbar -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -52,10 +55,10 @@
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3>53<sup style="font-size: 20px"> รายการ</sup></h3>
-                                    <p>ซ่อมสำเร็จ</p>
+                                    <p>เบิกอะไหล่</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="fas fa-check"></i>
+                                    <i class="fas fa-toolbox"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">เพิ่มเติม <i
                                         class="fas fa-arrow-circle-right"></i></a>
@@ -66,11 +69,11 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44<sup style="font-size: 20px"> รายการ</sup></h3>
-                                    <p>กำลังดำเนินการซ่อม</p>
+                                    <h3>44<sup style="font-size: 20px"> คน</sup></h3>
+                                    <p>ยูสเซอร์ ทั้งหมด</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="fas fa-cogs"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">เพิ่มเติม <i
                                         class="fas fa-arrow-circle-right"></i></a>
@@ -81,11 +84,11 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65<sup style="font-size: 20px"> รายการ</sup></h3>
-                                    <p>ยกเลิกการซ่อม</p>
+                                    <h3>65<sup style="font-size: 20px"> คน</sup></h3>
+                                    <p>เจ้าหน้าที่ ทั้งหมด</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="fas fa-times"></i>
+                                    <i class="fas fa-user"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">เพิ่มเติม <i
                                         class="fas fa-arrow-circle-right"></i></a>
@@ -108,17 +111,10 @@
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <!-- Morris chart - Sales -->
-                                        <div class="chart tab-pane active" id="revenue-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="revenue-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
-                                        </div>
-                                        <div class="chart tab-pane" id="sales-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="sales-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
-                                        </div>
+                                        <?php
+                                        echo "<pre>";
+                                        var_dump($_SESSION);
+                                        ?>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div>
@@ -135,18 +131,11 @@
                                     </h3>
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
-                                    <div class="tab-content p-0">
-                                        <!-- Morris chart - Sales -->
-                                        <div class="chart tab-pane active" id="revenue-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="revenue-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
-                                        </div>
-                                        <div class="chart tab-pane" id="sales-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="sales-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
-                                        </div>
+                                <div class="tab-content p-0">
+                                        <?php 
+                                            echo "<pre>";
+                                            var_dump($row1);
+                                        ?>
                                     </div>
                                 </div><!-- /.card-body -->
                             </div>
@@ -160,4 +149,11 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <?php require_once '../src/layout/admin/admin_footer.php'?>
+        <?php require_once 'src/layout/admin/admin_footer.php'?>
+<?php
+}else{
+    echo'<script> 
+            window.location.href = "../index.php";
+        </script>';
+}
+?>

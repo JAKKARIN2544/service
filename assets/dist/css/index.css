@@ -1,5 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+/* Bootstrap css */
+
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+
+/* Google Material icons */
+
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
+
+/* Propeller css */
+
+@import "dist/css/propeller.min.css";
+
+/* Bootstrap datetimepicker */
+
+@import "datetimepicker/css/bootstrap-datetimepicker.css";
+
+/* Propeller datetimepicker */
+
+@import "datetimepicker/css/pmd-datetimepicker.css";
 body {
     font-family: 'Mitr', sans-serif;
+}
+
+.bg1 {
+    background-color: #a2caee;
+}
+
+.bg2 {
+    background-color: #7dd3ae;
+}
+
+.text-bg {
+    color: #3b3b3b;
+}
+
+.alert-bg {
+    background-color: #fdff89;
 }

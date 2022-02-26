@@ -27,7 +27,7 @@
     <!-- Brand Logo -->
     <a href="../page/index_users.php" class="brand-link">
       <img src="../assets/dist/img/favicon.ico" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">service system</span>
+      <span class="brand-text font-weight-light">ระบบแจ้งซ่อม</span>
     </a>
 
     <!-- Sidebar -->

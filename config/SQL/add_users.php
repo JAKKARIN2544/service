@@ -148,13 +148,13 @@
                     echo '<script type="text/javascript">
                                     Swal.fire({
                                         icon: "success",                    
-                                        title: "สมัครสมาชิก สำเร็จ!",
+                                        title: "เพิ่มผู้ใช้งาน สำเร็จ!",
                                         text: "ระบบ กำลังนำท่านไป...",
                                         showConfirmButton: false,
                                         timer: 3000
                                     }).then((result) => {
                                 if (result.isDismissed) {
-                                    window.location.href = "service.php?page=users";
+                                    window.location.href = "service.php?show='.MD5('show_user').'";
                                 }
                             });
                         </script>';
@@ -162,13 +162,13 @@
                     echo '<script type="text/javascript">
                             Swal.fire({
                                 icon: "error",                    
-                                title: "สมัครสมาชิก",
-                                text: "สมัครสมาชิก ไม่สำเร็จ!!!",
+                                title: เพิ่มผู้ใช้งาน ไม่สำเร็จ!",
+                                text: "กรุณาลองใหม่อีกครั้ง!!!",
                                 showConfirmButton: false,
                                 timer: 3000
                             }).then((result) => {
                                 if (result.isDismissed) {
-                                    window.history.back();
+                                    window.location.href = "service.php?show='.MD5('show_user').'";
                                 }
                             });
                     </script>';
