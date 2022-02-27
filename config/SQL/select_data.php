@@ -62,4 +62,24 @@ $query_list_service =   "SELECT tb_service.service_id, tb_service.service_date, 
                         INNER JOIN tb_status
                         ON tb_service.service_status = tb_status.status_name_eng";
         $query_list_service = $conn->query($query_list_service);
+
+//---------------------------------------------------------------------------------
+$count_officer_A = "SELECT COUNT(officer_id)  FROM tb_officer WHERE officer_level = 'admin'";
+        $count_officer_A = $conn->query($count_officer_A);
+        $row_count_officer_A = mysqli_fetch_array($count_officer_A);
+
+//---------------------------------------------------------------------------------
+$count_officer_O = "SELECT COUNT(officer_id)  FROM tb_officer WHERE officer_level = 'officer'";
+$count_officer_O = $conn->query($count_officer_O);
+$row_count_officer_O = mysqli_fetch_array($count_officer_O);
+
+//---------------------------------------------------------------------------------
+$count_users = "SELECT COUNT(user_id)  FROM tb_users WHERE user_level = 'user'";
+$count_users = $conn->query($count_users);
+$row_count_users = mysqli_fetch_array($count_users);
+
+//---------------------------------------------------------------------------------
+$count_sp = "SELECT COUNT(spare_id)  FROM tb_spare_part ";
+$count_sp = $conn->query($count_sp);
+$row_count_sp = mysqli_fetch_array($count_sp);
 ?>

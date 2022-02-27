@@ -22,7 +22,7 @@ session_start();
                                     timer: 2000
                                 }).then((result) => {
                                     if (result.isDismissed) {
-                                        window.location.href = "index.php";
+                                        window.history.back();
                                     }
                                 });
                         </script>';
@@ -36,7 +36,7 @@ session_start();
                                     timer: 2000
                                 }).then((result) => {
                                     if (result.isDismissed) {
-                                        window.location.href = "index.php";
+                                        window.history.back();
                                     }
                                 });
                         </script>';
@@ -77,7 +77,7 @@ session_start();
                                 timer: 3000
                             }).then((result) => {
                                 if (result.isDismissed) {
-                                    window.location.href = "index.php";
+                                    window.history.back();
                                 }
                             });
                         </script>';
@@ -92,7 +92,7 @@ session_start();
                             timer: 3000
                         }).then((result) => {
                             if (result.isDismissed) {
-                                window.location.href = "index.php";
+                                window.history.back();
                             }
                         });
                     </script>';

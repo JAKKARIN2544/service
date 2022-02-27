@@ -34,7 +34,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">ผู้ใช้งาน</span>
-                                            <span class="info-box-number">1,410 <small>คน</small></span>
+                                            <span class="info-box-number"><?php echo $row_count_users['COUNT(user_id)']; ?> <small>คน</small></span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -84,19 +84,16 @@
                                                     while ($row_data_users = mysqli_fetch_assoc($query_data_users)) {
                                                 ?>
                                                 <tr>
-                                                    <td class="text-center">
-                                                        <?php echo $row_data_users['user_id'] ?></td>
+                                                    <td class="text-center view_data_users" data-toggle="modal" data-target="#users_modal" id="<?php echo $row_data_users['user_id'] ?>">
+                                                        <a href="#"><?php echo $row_data_users['user_id'] ?></a></td>
                                                     <td><?php echo $row_data_users['id_ldentification'] ?></td>
                                                     <td><?php echo $row_data_users['email'] ?></td>
                                                     <td><?php echo $row_data_users['frist_name'].'  '.$row_data_users['last_name'] ?></td>
                                                     <td class="text-center"><?php echo $row_data_users['class'] ?></td>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" href=""><i class="far fa-eye"></i>
-                                                            </a>
-                                                        <a class="btn btn-warning" href=""><i class="fas fa-edit"></i>
-                                                            </a>
-                                                        <a class="btn btn-danger" href=""><i
-                                                                class="fas fa-trash-alt"></i></a>
+                                                    <button type="button" class="btn btn-success fas fa-eye view_data_users" data-toggle="modal" data-target="#users_modal" id="<?php echo $row_data_users['user_id'] ?>"></button>
+                                                        <a class="btn btn-warning" href="service.php?edit=<?php echo MD5('users')?>&id=<?php echo $row_data_users['user_id'] ?>"><i class="fas fa-edit"></i></a>
+                                                        <a class="btn btn-danger" href="service.php?action=confrim-delete-u&id=<?php echo $row_data_users['user_id'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php

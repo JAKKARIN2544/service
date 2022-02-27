@@ -96,8 +96,67 @@
                         window.location.href = "service.php?Home=index_admin";
                     </script>';
             }
-        
-        
+        }else if(isset($_GET['update'])){
+            if($_GET['update'] == MD5('update_profile_officer')){
+                require_once 'config/SQL/update_profile_officer.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_admin";
+                    </script>';
+            }
+        }else if(isset($_GET['reset'])){
+            if($_GET['reset'] == ('reset_admin')){
+                require_once 'page/reset_pass_admin.php';
+            }else if($_GET['reset'] == MD5('reset_pass_admin')){
+                require_once 'config/SQL/reset_password_A.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_admin";
+                    </script>';
+            }
+        }else if(isset($_GET['edit'])){
+            if($_GET['edit'] == MD5('officer')){
+                require_once 'page/form_edit_officer.php';
+            }else if($_GET['edit'] == MD5('users')){
+                require_once 'page/form_edit_users.php';
+            }else if($_GET['edit'] == MD5('sp')){
+                require_once 'page/form_edit_spare_part.php';
+            //-----------------------------------------------
+            }else if($_GET['edit'] == MD5('edit_officer')){
+                require_once 'config/SQL/edit_officer.php';
+            }else if($_GET['edit'] == MD5('edit_users')){
+                require_once 'config/SQL/edit_users.php';
+            }else if($_GET['edit'] == MD5('edit_spare_part')){
+                require_once 'config/SQL/edit_spare_part.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_admin";
+                    </script>';
+            }
+        }else if(isset($_GET['action'])){
+            if($_GET['action'] == ('confrim-delete')){
+                require_once 'config/SQL/confrim_delete_officer.php';
+            }else if($_GET['action'] == ('confrim-delete-u')){
+                    require_once 'config/SQL/confrim_delete_users.php';
+            }else if($_GET['action'] == ('confrim-delete-sp')){
+                    require_once 'config/SQL/confrim_delete_sp.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_admin";
+                    </script>';
+            }
+        }else if(isset($_GET['delete'])){
+            if($_GET['delete'] == MD5('officer')){
+                require_once 'config/SQL/delete_officer.php';
+            }else if($_GET['delete'] == MD5('users')){
+                require_once 'config/SQL/delete_users.php';
+            }else if($_GET['delete'] == MD5('spare_part')){
+                require_once 'config/SQL/delete_spare_part.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_admin";
+                    </script>';
+            }
         }else{
             echo '<script> 
                     window.location.href = "index.php";

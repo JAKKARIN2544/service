@@ -34,7 +34,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">อะไหล่ทั้งหมด</span>
-                                            <span class="info-box-number">1,410 <small>ชิ้น</small></span>
+                                            <span class="info-box-number"><?php echo $row_count_sp['COUNT(spare_id)']; ?> <small>ชิ้น</small></span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -97,12 +97,9 @@
                                                     <td><?php echo $row_data_spare_part['spare_price'] ?> บาท</td>
                                                     <td><?php echo $row_data_spare_part['spare_remaining'] ?> ชิ้น</td>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" href=""><i class="far fa-eye"></i>
-                                                            </a>
-                                                        <a class="btn btn-warning" href=""><i class="fas fa-edit"></i>
-                                                            </a>
-                                                        <a class="btn btn-danger" href=""><i
-                                                                class="fas fa-trash-alt"></i></a>
+                                                    <button type="button" class="btn btn-success fas fa-eye view_data_sp" data-toggle="modal" data-target="#sp_modal" id="<?php echo $row_data_spare_part['spare_id'] ?>"></button>
+                                                        <a class="btn btn-warning" href="service.php?edit=<?php echo MD5('sp')?>&id=<?php echo $row_data_spare_part['spare_id'] ?>"><i class="fas fa-edit"></i></a>
+                                                        <a class="btn btn-danger" href="service.php?action=confrim-delete-sp&id=<?php echo $row_data_spare_part['spare_id'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php

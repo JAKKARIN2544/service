@@ -35,7 +35,7 @@
       </div>
       <div class="user-panel mt-1 text-center">
         <div class="info">
-          <a href="#" class="d-block"><?php echo  $row1['officer_fristname'].' '.$row1['officer_lastname']; ?></a>
+          <a href="service.php?view=profile" class="d-block"><?php echo  $row1['officer_fristname'].' '.$row1['officer_lastname']; ?></a>
         </div>
       </div>
 
@@ -108,7 +108,7 @@
               <p class="text">ข้อมูลส่วนตัว</p>
             </a>
             <li class="nav-item">
-            <a href="#" class="nav-link ">
+            <a href="service.php?reset=reset_admin" class="nav-link ">
               <i class="nav-icon fas fa-lock"></i>
               <p class="text">เปลี่ยนรหัสผ่าน</p>
             </a>

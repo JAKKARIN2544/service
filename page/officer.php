@@ -34,7 +34,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">ผู้ดูแลระบบ</span>
-                                            <span class="info-box-number">1,410 <small>คน</small></span>
+                                            <span class="info-box-number"><?php echo $row_count_officer_A['COUNT(officer_id)']; ?> <small>คน</small></span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -47,7 +47,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">เจ้าหน้าที่</span>
-                                            <span class="info-box-number">410 <small>คน</small></span>
+                                            <span class="info-box-number"><?php echo $row_count_officer_O['COUNT(officer_id)']; ?> <small>คน</small></span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -83,7 +83,6 @@
                                             <thead class="text-center">
                                                 <tr>
                                                     <th>รหัส เจ้าหน้าที่</th>
-                                                    <th>email</th>
                                                     <th>ชื่อ</th>
                                                     <th>สกุล</th>
                                                     <th>เบอร์โทรศัพท์</th>
@@ -97,10 +96,9 @@
                                                     // output data of each row
                                                     while ($row_data_officer = mysqli_fetch_assoc($query_data_officer)) {
                                                 ?>
-                                                <tr>
-                                                    <td class="text-center">
-                                                        <?php echo $row_data_officer['officer_id'] ?></td>
-                                                    <td><?php echo $row_data_officer['officer_email'] ?></td>
+                                                <tr class="text-center">
+                                                    <td class="text-center view_data" data-toggle="modal" data-target="#officer_modal" id="<?php echo $row_data_officer['officer_id'] ?>">
+                                                        <a href="#"><?php echo $row_data_officer['officer_id'] ?></a></td>
                                                     <td><?php echo $row_data_officer['officer_fristname'] ?></td>
                                                     <td><?php echo $row_data_officer['officer_lastname'] ?></td>
                                                     <td><?php echo $row_data_officer['officer_phone'] ?></td>
@@ -111,12 +109,9 @@
                                                         }
                                                     ?>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" href=""><i class="far fa-eye"></i>
-                                                            </a>
-                                                        <a class="btn btn-warning" href=""><i class="fas fa-edit"></i>
-                                                            </a>
-                                                        <a class="btn btn-danger" href=""><i
-                                                                class="fas fa-trash-alt"></i></a>
+                                                        <button type="button" class="btn btn-success fas fa-eye view_data" data-toggle="modal" data-target="#officer_modal" id="<?php echo $row_data_officer['officer_id'] ?>"></button>
+                                                        <a class="btn btn-warning" href="service.php?edit=<?php echo MD5('officer')?>&id=<?php echo $row_data_officer['officer_id'] ?>"><i class="fas fa-edit"></i></a>
+                                                        <a class="btn btn-danger" href="service.php?action=confrim-delete&id=<?php echo $row_data_officer['officer_id'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php
