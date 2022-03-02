@@ -8,9 +8,9 @@
 
 <body>
 <?php
-    session_start();    
-    session_destroy();
+    session_start();
     if(!empty($_SESSION)){
+        session_destroy();
         echo '<script type="text/javascript">
                     Swal.fire({
                     icon: "success",                    

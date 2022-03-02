@@ -75,6 +75,41 @@
                     </div>
                     <div class="row">
                         <!-- Left col -->
+                        <section class="col-lg-6 connectedSortable">
+                            <!-- Custom tabs (Charts with tabs)-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                        กราฟข้อมูลแจ้งซ่อม
+                                    </h3>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="tab-content p-0">
+                                        <canvas id="myChart2" width="auto" height="auto"></canvas>
+                                    </div>
+                                </div>
+                            </div><!-- /.card-body -->
+                        </section>
+                        <section class="col-lg-6 connectedSortable">
+                            <!-- Custom tabs (Charts with tabs)-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                    <i class="fas fa-chart-bar mr-1"></i>
+                                        กราฟข้อมูลสถานการซ่อมในระบบ
+                                    </h3>
+                                </div><!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="tab-content p-0">
+                                        <canvas id="myChart" width="auto" height="auto"></canvas>
+                                    </div>
+                                </div>
+                            </div><!-- /.card-body -->
+                        </section>
+                    </div>
+                    <div class="row">
+                        <!-- Left col -->
                         <section class="col-lg-12 connectedSortable">
                             <!-- Custom tabs (Charts with tabs)-->
                             <div class="card">
@@ -86,9 +121,7 @@
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <div class="row">
-                                           
-                                        </div>
+                                        <canvas id="myChart5" width="auto" height="auto"></canvas>
                                     </div>
                                 </div>
                             </div><!-- /.card-body -->

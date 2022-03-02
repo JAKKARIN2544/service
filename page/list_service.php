@@ -14,40 +14,7 @@
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="col-md-12">
-                    <div class="mt-4 mb-3">
-                        <div class="">
-                            <form action="" method="POST">
-                                <div class="row">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="input-group input-group-lg mb-3">
-                                                <select class="custom-select" name="status">
-                                                 <option selected disabled>เลือก</option>
-                                                <?php
-                                                    if (mysqli_num_rows($query_status_service) > 1) {
-                                                        // output data of each row
-                                                        while ($row = mysqli_fetch_assoc($query_status_service)) {
-                                                    ?>
-                                                            <option value="<?php echo $row['status_name_eng'] ?>">
-                                                                <?php echo $row['status_name_th'] ?>
-                                                            </option>
-                                                    <?php
-                                                        }
-                                                    } else {
-                                                        //echo "0 results";
-                                                    }
-                                                    ?>       
-                                                </select>
-                                                <button type="submit" class="btn btn-primary btn-lg ml-3">ค้นหา</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    
                     <!-- /.card -->
                 </div>
             </div>
@@ -63,13 +30,15 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <table id="example" class="display responsive nowrap" style="width:100%">
+                                        <div class="text-right">ค้นหาจากสถานะการแจ้งซ่อม: </div>
+                                        <div class="text-right mb-3"><span class="text-success">รับซ่อม</span><span class="text-warning"> กำลังซ่อม</span>
+                                        <span class="text-primary"> ประเมินอาการชำรุด</span><span class="text-danger"> ยกเลิกซ่อม</span></div>
                                             <thead class="text-center">
                                                 <tr>
                                                     <th>รหัสการแจ้งซ่อม</th>
                                                     <th>วันที่แจ้งซ่อม</th>
                                                     <th>แจ้งซ่อมโดย</th>
                                                     <th>รับงานซ่อม โดย</th>
-                                                    <th>สถานะการซ่อม</th>
                                                     <th>การจัดการ</th>
                                                 </tr>
                                             </thead>
@@ -80,16 +49,12 @@
                                                     while ($row_list_service = mysqli_fetch_assoc($query_list_service)) {
                                                 ?>
                                                 <tr class="text-center">
-                                                    <td><?php echo $row_list_service['service_id'] ?></td>
+                                                    <td class="view_data_service" data-toggle="modal" data-target="#service_modal" id="<?php echo $row_list_service['service_id'] ?>"><a href="#"><?php echo $row_list_service['service_id'] ?></a></td>
                                                     <td><?php echo $row_list_service['service_date'] ?></td>
                                                     <td><?php echo $row_list_service['frist_name'].' '.$row_list_service['last_name'] ?></td>
                                                     <td><?php echo $row_list_service['officer_fristname'].' '.$row_list_service['officer_lastname'] ?></td>
-                                                    <td><?php echo $row_list_service['status_name_th'] ?></td>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" href=""><i
-                                                                class="far fa-eye"></i></a>
-                                                        <a class="btn btn-secondary" href=""><i
-                                                                class="fas fa-print"></i></a>
+                                                        <button class="btn btn-success view_data_service" data-toggle="modal" data-target="#service_modal" id="<?php echo $row_list_service['service_id'] ?>"><i class="far fa-eye"></i></button>
                                                     </td>
                                                 </tr>
                                                 <?php

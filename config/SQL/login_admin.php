@@ -49,7 +49,6 @@ session_start();
 
                 if(mysqli_num_rows($result)==1){
                     $row = mysqli_fetch_array($result);
-
                     $_SESSION["id"] = $row["id"];
                     $_SESSION["level"] = $row["level"];
 

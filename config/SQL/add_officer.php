@@ -136,8 +136,9 @@
         $password           = MD5($_POST['password']);
         $phone              = $_POST['phone'];
         $level              = $_POST['level'];
+        $OTP                = "";
 
-        $sql1 = "INSERT INTO tb_login VALUE ('$officer_id','$id_card','$password','$level')";
+        $sql1 = "INSERT INTO tb_login VALUE ('$officer_id','$id_card','$password','$email','$level','$OTP')";
         $result1 = mysqli_query($conn, $sql1) or die ("Error in query: $sql1 " . mysqli_error());
         //--------------------------------------------------------------------------------------------------------
         $sql2 = "INSERT INTO tb_officer VALUE ('$officer_id ','$id_card','$email','$fristname','$lastname','$phone','$level')";                 

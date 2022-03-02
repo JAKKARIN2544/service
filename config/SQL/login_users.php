@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,8 +49,7 @@
 
                 if(mysqli_num_rows($result)==1){
                     $row = mysqli_fetch_array($result);
-
-                    //$_SESSION["id"] = $row["id"];
+                    $_SESSION["id"] = $row["id"];
                     //$_SESSION["username"] = $row["username"];
                     $_SESSION["level"] = $row["level"];
 
@@ -61,7 +63,7 @@
                                     timer: 3000
                                 }).then((result) => {
                                     if (result.isDismissed) {
-                                        window.location.href = "page/index_users.php";
+                                        window.location.href = "service.php?Home=index_users";
                                     }
                                 });
                         </script>';

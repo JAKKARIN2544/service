@@ -103,6 +103,7 @@
         $lastname           = $_POST['lastname'];
         $phone              = $_POST['phone'];
         $level              = $_POST['level'];
+        $OTP                = " ";
         //echo '<pre>';
         //print_r($_POST);
         $sql1 = "UPDATE tb_officer SET officer_email = '$email', officer_id_card = '$id_card', officer_fristname = '$fristname', officer_lastname = '$lastname', 
@@ -110,7 +111,7 @@
                 WHERE officer_id = '".$id."' ";  
         $result1 = mysqli_query($conn, $sql1) or die ("Error in query: $sql1" . mysqli_error());
         //-----------------------------------------------------------------------------------------------------
-        $sql2 = "UPDATE tb_login SET username = '$id_card'  WHERE id = '".$id."' ";  
+        $sql2 = "UPDATE tb_login SET username = '$id_card', email = '$email', OTP = '$OTP'  WHERE id = '".$id."' ";  
         $result2 = mysqli_query($conn, $sql2) or die ("Error in query: $sql2" . mysqli_error());
         mysqli_close($conn);
                 if ($result1 && $result2) {

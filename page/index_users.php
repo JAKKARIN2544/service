@@ -1,10 +1,13 @@
-<?php require_once '../src/layout/users/users_header.php'?>
+<?php
+ if(!isset($_SESSION['id'])){ 
+?>
+<?php require_once 'src/layout/users/users_header.php'?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Navbar -->
-        <?php require_once '../src/layout/users/users_navbar.php'?>
+        <?php require_once 'src/layout/users/users_navbar.php'?>
         <!-- /.navbar -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -30,69 +33,6 @@
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>150<sup style="font-size: 20px"> รายการ</sup></h3>
-
-                                    <p>แจ้งซ่อม</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-clipboard-list"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">เพิ่มเติม <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3>53<sup style="font-size: 20px"> รายการ</sup></h3>
-                                    <p>ซ่อมสำเร็จ</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">เพิ่มเติม <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>44<sup style="font-size: 20px"> รายการ</sup></h3>
-                                    <p>กำลังดำเนินการซ่อม</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">เพิ่มเติม <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3>65<sup style="font-size: 20px"> รายการ</sup></h3>
-                                    <p>ยกเลิกการซ่อม</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-times"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">เพิ่มเติม <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
                     <!-- /.row -->
                     <!-- Main row -->
                     <div class="row">
@@ -100,24 +40,13 @@
                         <section class="col-lg-6 connectedSortable">
                             <!-- Custom tabs (Charts with tabs)-->
                             <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-chart-pie mr-1"></i>
-                                        รายงานการแจ้งซ่อม
-                                    </h3>
-                                </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <!-- Morris chart - Sales -->
-                                        <div class="chart tab-pane active" id="revenue-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="revenue-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
+                                        <div class="row">
+                                            <h1>รายการซ่อมทั้งหมด <?php echo $row_cau['COUNT(service_id)'] ?> รายการ</h1>
                                         </div>
-                                        <div class="chart tab-pane" id="sales-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="sales-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
+                                        <div class="row">
+                                            <canvas id="myChart1" width="auto" height="auto"></canvas>
                                         </div>
                                     </div>
                                 </div><!-- /.card-body -->
@@ -128,36 +57,91 @@
                         <!-- right col (We are only adding the ID to make the widgets sortable)-->
                         <section class="col-lg-6 connectedSortable">
                             <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-chart-pie mr-1"></i>
-                                        รายงานการแจ้งซ่อม
-                                    </h3>
-                                </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <!-- Morris chart - Sales -->
-                                        <div class="chart tab-pane active" id="revenue-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="revenue-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
+                                        <div class="row mt-4">
+                                            <div class="col-lg-6 col-6">
+                                                <!-- small box -->
+                                                <div class="small-box bgusers3">
+                                                    <div class="inner">
+                                                        <h3><?php echo $row_cus4['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+
+                                                        <p>รอประเมินการซ่อม</p>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fas fa-clipboard-list"></i>
+                                                    </div>
+                                                    <a class="small-box-footer"><br></a>
+                                                </div>
+                                            </div>
+                                            <!-- ./col -->
+                                            <div class="col-lg-6 col-6">
+                                                <!-- small box -->
+                                                <div class="small-box bgusers2">
+                                                    <div class="inner">
+                                                        <h3><?php echo $row_cus3['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+                                                        <p>ซ่อม สำเร็จ</p>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fas fa-tools"></i>
+                                                    </div>
+                                                    <a class="small-box-footer"><br></a>
+                                                </div>
+                                            </div>
+                                            <!-- ./col -->
                                         </div>
-                                        <div class="chart tab-pane" id="sales-chart"
-                                            style="position: relative; height: 300px;">
-                                            <canvas id="sales-chart-canvas" height="300"
-                                                style="height: 300px;"></canvas>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-6">
+                                                <!-- small box -->
+                                                <div class="small-box bgusers1">
+                                                    <div class="inner">
+                                                        <h3><?php echo $row_cus1['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+
+                                                        <p>กำลังดำเนินการซ่อม</p>
+                                                    </div>
+                                                    <div class="icon">
+                                                    <i class="fas fa-wrench"></i>
+                                                    </div>
+                                                    <a class="small-box-footer"><br></a>
+                                                </div>
+                                            </div>
+                                            <!-- ./col -->
+                                            <div class="col-lg-6 col-6">
+                                                <!-- small box -->
+                                                <div class="small-box bgusers4">
+                                                    <div class="inner">
+                                                        <h3><?php echo $row_cus2['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+                                                        <p>ยกเลิกการซ่อม</p>
+                                                    </div>
+                                                    <div class="icon">
+                                                    <i class="fas fa-times"></i>
+                                                    </div>
+                                                    <a class="small-box-footer"><br></a>
+                                                </div>
+                                            </div>
+                                            <!-- ./col -->
                                         </div>
+                                        <!-- ./col -->
                                     </div>
-                                </div><!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                        </section>
-                        <!-- right col -->
+                                </div>
+                            </div><!-- /.card-body -->
                     </div>
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
+                    <!-- /.card -->
             </section>
-            <!-- /.content -->
+            <!-- right col -->
         </div>
-        <!-- /.content-wrapper -->
-        <?php require_once '../src/layout/users/users_footer.php'?>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <?php require_once 'src/layout/users/users_footer.php'?>
+    <?php require_once 'src/chart/user_chart.php'?>
+    <?php
+}else{
+    echo'<script> 
+            window.location.href = "../index.php";
+        </script>';
+}
+?>

@@ -22,3 +22,73 @@ body {
 .swal2-actions {
     font-family: 'Mitr', sans-serif !important;
 }
+
+.btn1 {
+    background-color: rgb(255, 94, 0);
+    color: #ffffff;
+}
+
+.bgadmin1 {
+    background-color: #3b9aec;
+    color: #ffffff;
+}
+
+.bgadmin2 {
+    background-color: #26cf2e;
+    color: #ffffff;
+}
+
+.bgadmin3 {
+    background-color: #e2df13;
+    color: #000000;
+}
+
+.bgadmin4 {
+    background-color: #ee2222;
+    color: #ffffff;
+}
+
+.bgofficer1 {
+    background-color: #ffae00;
+    color: #ffffff;
+}
+
+.bgofficer2 {
+    background-color: #26cf2e;
+    color: #ffffff;
+}
+
+.bgofficer3 {
+    background-color: #4c6bf8;
+    color: #ffffff;
+}
+
+.bgofficer4 {
+    background-color: #313131;
+    color: #ffffff;
+}
+
+.bgusers1 {
+    background-color: #ffae00;
+    color: #ffffff;
+}
+
+.bgusers2 {
+    background-color: #26cf2e;
+    color: #ffffff;
+}
+
+.bgusers3 {
+    background-color: #4c6bf8;
+    color: #ffffff;
+}
+
+.bgusers4 {
+    background-color: #313131;
+    color: #ffffff;
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+}

@@ -77,8 +77,17 @@
             $sql1 = "SELECT password FROM tb_login WHERE id = '".$_SESSION['id']."'";                 
             $result1 = mysqli_query($conn,$sql1);
             $row = mysqli_fetch_array($result1); 
-                if($row['password'] == MD5($_POST['old_password'])){
 
+                //echo $_SESSION['id'];
+               echo $row['password'];
+               echo '<br>';
+               echo $old_password;
+               echo '<br>';
+               echo $new_password;
+               echo '<br>';
+               echo $new_password2;
+               /*if($row['password'] == MD5($_POST['old_password'])){
+                    //echo 'Y';
                     $sql2 = "UPDATE tb_login SET password = '$new_password ' WHERE id = '".$_SESSION['id']."' ";  
                     $result2 = mysqli_query($conn, $sql2) or die ("Error in query: $sql2" . mysqli_error());
                         if ($result1 && $result2) {
@@ -110,23 +119,21 @@
                                     });
                             </script>';
                         }
-                }else{
-                    echo '<script type="text/javascript">
-                            Swal.fire({
-                                icon: "error", 
-                                title: "รหัสผ่านเก่า ไม่ถูกต้อง !!!",                  
-                                text: "ระบบ กำลังนำท่านไป...",
-                                showConfirmButton: false,
-                                timer: 3000
-                            }).then((result) => {
-                                if (result.isDismissed) {
-                                    window.history.back();
-                                }
-                            });
-                        </script>';
-                }     
-            
-
+               }else{
+                echo '<script type="text/javascript">
+                    Swal.fire({
+                        icon: "error",                    
+                        title: "ข้อผิดพลาด",
+                        text: "รหัสผ่าน ไม่ตรงกัน!!!",
+                        showConfirmButton: false,
+                        timer: 3000
+                    }).then((result) => {
+                        if (result.isDismissed) {
+                            window.history.back();
+                        }
+                    });
+            </script>';
+               }*/
         }
 ?>
 </body>

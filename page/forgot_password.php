@@ -28,18 +28,18 @@
                                 </div>
                                 <div class="container"> 
                                 <div class="alert alert-bg alert-dismissible text-center">
-                                    <p class="">กรุณาใส่อีเมลของคุณที่สมัครสมาชิกไว้ เราจะทำการส่งลิ้งค์เพื่อตั้งรหัสผ่านใหม่ไปยังอีเมลของคุณ !!</p> 
+                                    <p class="">กรุณาใส่อีเมลของคุณที่สมัครสมาชิกไว้ ระบบจะทำการส่งลิ้งค์เพื่อตั้งรหัสผ่านใหม่ไปยังอีเมลของคุณ</p> 
                                 </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="service.php?login=<?php echo MD5('login_user') ?>" method="POST">
+                                    <form action="service.php?send=forgot_password" method="POST">
                                         <div class="form-group">
-                                            <label for="username">E-mail<span class="text-danger">*</span></label>
+                                            <label for="email">E-mail<span class="text-danger">*</span></label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                                 </div>
-                                                <input type="email" class="form-control" name="username"
+                                                <input type="email" class="form-control" name="email"
                                                     placeholder="">
                                             </div>
                                         </div>

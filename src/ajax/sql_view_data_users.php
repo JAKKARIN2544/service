@@ -10,14 +10,16 @@ $sql = "SELECT * FROM tb_users WHERE user_id = '{$users_id}'";
 $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $view_detail_users.='<div class="text-center">';
-        $view_detail_users.= '<img src="assets/dist/img/avatar/avatar5.png" alt="" class="brand-image img-circle elevation-0 mb-3" style="opacity: 1; width: 130px;">';
-        $view_detail_users.= '<p>รหัสผู้ใช้งาน : <span class="text-danger ">'.$row['user_id'].'</span> </p>';
-        $view_detail_users.= '<p>E-mail : <span class="text-danger">'.$row['email'].'</span> </p>';
-        $view_detail_users.= '<p>รหัสประจำตัว : <span class="text-danger">'.$row['id_ldentification'].'</span> </p>';
-        $view_detail_users.= '<p>ชื่อ - สกุล : <span class="text-danger">'.$row['frist_name'].' '.$row['last_name'].'</span> </p>';
-        $view_detail_users.= '<p>ชั้น - แผนก : <span class="text-danger">'.$row['class'].' '.$row['department'].'</span> </p>';
-        $view_detail_users.= '<p>เบอร์โทรศัพท์ : <span class="text-danger">'.$row['phone'].'</span> </p>';
+                $img = '<img src="assets/dist/img/avatar/avatar5.png" alt="" class="brand-image img-circle elevation-0 mb-3" style="opacity: 1; width: 130px;">';
+                $view_detail_users.= '<div class="text-center">'.$img.'</div>';
+                $view_detail_users.= '<div class="text-center">รหัสเจ้าหน้าที่ : <span class="text-danger">'.$row['user_id'].'</span></div><br>';
+                $view_detail_users.='<center><table border="1" >';
+                $view_detail_users.='<tr><td>&nbsp;E-mail :&nbsp;</td><td>&nbsp;<span class="text-danger">'.$row['email'].'</span>&nbsp;</td></tr>';
+                $view_detail_users.='<tr><td>&nbsp;รหัสประจำตัว : &nbsp;</td><td>&nbsp;<span class="text-danger">'.$row['id_ldentification'].'</span></td></tr>';
+                $view_detail_users.='<tr><td>&nbsp;ชื่อ - สกุล : </td><td>&nbsp;<span class="text-danger">'.$row['frist_name'].' '.$row['last_name'].'</span></td></tr>';
+                $view_detail_users.='<tr><td>&nbsp;ระดับชั้น - แผนก :&nbsp;</td><td>&nbsp;<span class="text-danger">'.$row['class'].' '.$row['department'].'&nbsp;</span></td></tr>';
+                $view_detail_users.='<tr><td>&nbsp;เบอร์โทรศัพท์ :</td><td>&nbsp;<span class="text-danger">'.$row['phone'].'</span></td></tr>';
+                $view_detail_users.='</center></table>';
         
     }
     echo $view_detail_users;

@@ -131,6 +131,7 @@
         $class              = $_POST['class'];
         $department         = $_POST['department'];
         $phone              = $_POST['phone'];
+        $OTP                = " ";
         //echo '<pre>'; 
         //print_r($_POST);
         $sql1 = "UPDATE tb_users SET id_ldentification = '$id_ldentification', email = '$email', frist_name = '$frist_name', last_name = '$last_name',
@@ -138,7 +139,7 @@
                  WHERE user_id = '".$id."' ";  
         $result1 = mysqli_query($conn, $sql1) or die ("Error in query: $sql1" . mysqli_error());
         //-----------------------------------------------------------------------------------------------------
-        $sql2 = "UPDATE tb_login SET username = '$id_ldentification'  WHERE id = '".$id."' ";  
+        $sql2 = "UPDATE tb_login SET username = '$id_ldentification', email = '$email', OTP = '$OTP'  WHERE id = '".$id."' ";  
         $result2 = mysqli_query($conn, $sql2) or die ("Error in query: $sql2" . mysqli_error());
         mysqli_close($conn);
                 if ($result1 && $result2) {

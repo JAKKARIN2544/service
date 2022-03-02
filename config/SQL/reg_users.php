@@ -136,9 +136,10 @@
         $department         = $_POST['department'];
         $phone              = $_POST['phone'];
         $user_level         = "user";
+        $OTP                = " ";
         //echo '<pre>'; 
         //print_r($_POST);
-        $sql1 = "INSERT INTO tb_login VALUE ('$user_id ','$id_ldentification','$password','$user_level')";
+        $sql1 = "INSERT INTO tb_login VALUE ('$user_id ','$id_ldentification','$password','$email','$user_level','$OTP')";
         $result1 = mysqli_query($conn, $sql1) or die ("Error in query: $sql1 " . mysqli_error());
         //--------------------------------------------------------------------------------------------------------
         $sql2 = "INSERT INTO tb_users VALUE ('$user_id ','$id_ldentification','$email','$frist_name','$last_name','$class','$department','$phone','$user_level')";                 

@@ -27,41 +27,57 @@
                                     <h4><i class="fas fa-user-graduate"></i> สมัครสมาชิก </h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="service.php?register=<?php echo MD5('reg_user') ?>" method="POST" class="form-horizontal">
+                                    <form action="service.php?register=<?php echo MD5('reg_user') ?>" method="POST"
+                                        class="form-horizontal">
                                         <div class="card-body">
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-2 col-form-label">ชื่อ - สกุล</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" class="form-control" name="frist_name" placeholder="">
+                                                    <input type="text" class="form-control" name="frist_name"
+                                                        placeholder="">
                                                     <small>ชื่อ <small class="text-danger">*</small></small>
                                                 </div>
                                                 <div class="col-sm-5">
-                                                    <input type="text" class="form-control" name="last_name" placeholder="">
+                                                    <input type="text" class="form-control" name="last_name"
+                                                        placeholder="">
                                                     <small>นามสกุล <small class="text-danger">*</small></small>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-2 col-form-label">E-mail</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="email" placeholder="">
-                                                    <small>E-mail <small class="text-danger">*</small></small>
+                                                    <input type="text" class="form-control" name="email" id="email"
+                                                        placeholder="">
+                                                    <small>E-mail <small class="text-danger" id="msg_email">*</small></small>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-2 col-form-label">รหัสนักศึกษา</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" class="form-control" name="id_ldentification" placeholder="">
+                                                    <input type="text" class="form-control" name="id_ldentification"
+                                                        placeholder="">
                                                     <small>รหัสนักศึกษา <small class="text-danger">*</small></small>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <select class="custom-select" name="gender">
+                                                        <option selected disabled></option>
+                                                        <option value="ชาย">ชาย</option>
+                                                        <option value="หญิง">หญิง</option>
+
+                                                    </select>
+                                                    <small>เพศ <small class="text-danger">*</small></small>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="col-sm-2 col-form-label">รหัสผ่าน</label>
                                                 <div class="col-sm-5">
-                                                    <input type="password" class="form-control" name="password" placeholder="">
+                                                    <input type="password" class="form-control" name="password"
+                                                        placeholder="">
                                                     <small>รหัสผ่าน <small class="text-danger">*</small></small>
                                                 </div>
                                                 <div class="col-sm-5">
-                                                    <input type="password" class="form-control" name="con-password" placeholder="">
+                                                    <input type="password" class="form-control" name="con-password"
+                                                        placeholder="">
                                                     <small>ยืนยัน รหัสผ่าน <small class="text-danger">*</small></small>
                                                 </div>
 

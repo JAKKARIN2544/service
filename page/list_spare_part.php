@@ -34,7 +34,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text">เบิกอะไหล่ทั้งหมด</span>
-                                            <span class="info-box-number">1,410 <small>ชิ้น</small></span>
+                                            <span class="info-box-number"><?php echo $row_count_list_sp['COUNT(sp_list_id)']; ?> <small>ชิ้น</small></span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -46,8 +46,8 @@
                                         <span class="info-box-icon bg-info"><i class="fas fa-toolbox"></i></span>
 
                                         <div class="info-box-content">
-                                            <span class="info-box-text">เบิกอะไหล่วันนี้</span>
-                                            <span class="info-box-number">1,410 <small>ชิ้น</small></span>
+                                            <span class="info-box-text">เบิกอะไหล่ <span class="text-danger"><?php echo date("d/m/Y"); ?></span></span>
+                                            <span class="info-box-number"><?php echo $row_count_list_sp_today['COUNT(sp_list_id)']; ?> <small>ชิ้น</small></span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -98,7 +98,7 @@
                                                     <td><?php echo $row_list_sp['officer_fristname'].' '.$row_list_sp['officer_lastname'] ?> </td>
                                                     <td><?php echo $row_list_sp['sp_list_total'] ?> ชิ้น</td>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" href=""><i class="far fa-eye"></i></a>
+                                                        <button class="btn btn-success view_data_list_sp" data-toggle="modal" data-target="#list_sp_modal" id="<?php echo $row_list_sp['sp_list_id'] ?>"><i class="far fa-eye"></i></button>
                                                     </td>
                                                 </tr>
                                                 <?php
