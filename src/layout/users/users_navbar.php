@@ -109,6 +109,12 @@
             </ul>
             </li>
             </li>
+            <li class="nav-item">
+                    <a href="service.php?report=report-users" class="nav-link">
+                        <i class="far fa-copy nav-icon"></i>
+                        <p>รายงาน</p>
+                    </a>
+                </li>
             <li class="nav-header">การจัดการ</li>
             <li class="nav-item">
                 <a href="service.php?view=profile_u" class="nav-link ">

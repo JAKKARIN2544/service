@@ -53,8 +53,8 @@ $query_users = "SELECT tb_login.id,tb_users.*
         $row2=mysqli_fetch_array($query_users);
         
 
-$sql1 = "SELECT tb_service_detail.service_date,tb_service_detail.computer_name,tb_service_detail.malfunction,
-        tb_officer.officer_fristname,tb_officer.officer_lastname,tb_status.status_name_th,tb_service_detail.officer_id
+$sql1 = "SELECT tb_service_detail.service_id,tb_service_detail.service_date,tb_service_detail.computer_name,tb_officer.officer_fristname,
+        tb_officer.officer_lastname,tb_status.status_name_th,tb_service_detail.officer_id
         FROM tb_service_detail 
         LEFT JOIN tb_officer
         ON tb_service_detail.officer_id = tb_officer.officer_id
@@ -63,8 +63,8 @@ $sql1 = "SELECT tb_service_detail.service_date,tb_service_detail.computer_name,t
         WHERE user_id = '".$_SESSION['id']."' AND status = 'being' OR status = 'estimate'";
 $result1 = mysqli_query($conn, $sql1);
 
-$sql2 = "SELECT tb_service_detail.service_date,tb_service_detail.computer_name,tb_service_detail.malfunction,
-        tb_officer.officer_fristname,tb_officer.officer_lastname,tb_status.status_name_th,tb_service_detail.service_end_date
+$sql2 = "SELECT tb_service_detail.service_id,tb_service_detail.service_date,tb_service_detail.computer_name,tb_officer.officer_fristname,
+        tb_officer.officer_lastname,tb_status.status_name_th,tb_service_detail.service_end_date
         FROM tb_service_detail 
         LEFT JOIN tb_officer
         ON tb_service_detail.officer_id = tb_officer.officer_id
@@ -73,8 +73,8 @@ $sql2 = "SELECT tb_service_detail.service_date,tb_service_detail.computer_name,t
         WHERE user_id = '".$_SESSION['id']."' AND status = 'success'";
 $result2 = mysqli_query($conn, $sql2);
 
-$sql3 = "SELECT tb_service_detail.service_date,tb_service_detail.computer_name,tb_service_detail.malfunction,
-        tb_officer.officer_fristname,tb_officer.officer_lastname,tb_status.status_name_th,tb_service_detail.service_end_date
+$sql3 = "SELECT tb_service_detail.service_id,tb_service_detail.service_date,tb_service_detail.computer_name,tb_officer.officer_fristname,
+        tb_officer.officer_lastname,tb_status.status_name_th,tb_service_detail.service_end_date
         FROM tb_service_detail 
         LEFT JOIN tb_officer
         ON tb_service_detail.officer_id = tb_officer.officer_id
@@ -107,6 +107,9 @@ $row_cus4 = mysqli_fetch_array($cus4);
 $cau = "SELECT COUNT(service_id) FROM tb_service_detail WHERE  user_id = '".$_SESSION['id']."'";
 $cau = $conn->query($cau);
 $row_cau = mysqli_fetch_array($cau);
+
+//---------------------------------------------------------------------------------
+
 //---------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------

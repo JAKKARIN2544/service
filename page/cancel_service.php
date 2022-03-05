@@ -43,10 +43,10 @@
                                                     <td><?php echo $row3['service_date'] ?></td>
                                                     <td><?php echo $row3['service_end_date'] ?></td>
                                                     <td><?php echo $row3['computer_name'] ?></td>
-                                                    <td><?php echo $row3['officer_fristname'].''.$row3['officer_lastname']?></td>';
+                                                    <td><?php echo $row3['officer_fristname'].''.$row3['officer_lastname']?></td>
                                                     <td class="text-danger"><i class="fas fa-times"></i> <?php echo $row3['status_name_th'] ?></td>
                                                     <td class="text-center">
-                                                        <button type="button" class="btn btn-success view_data" data-toggle="modal" data-target="#officer_modal" id="<?php echo $row3['status_name_th'] ?>">ตรวจสอบ</button>
+                                                        <a href="service.php?detail=view-cancel-service&id=<?php echo $row3['service_id'] ?>" class="btn btn-success">ตรวจสอบ</a>
                                                     </td>
                                                 </tr>
                                                 <?php

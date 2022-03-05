@@ -61,8 +61,6 @@
                                                     class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</button>
                                             <a href="service.php?page=register" class="btn btn-warning mb-2"><i
                                                     class="fas fa-user-plus"></i> สมัครสมาชิก</a><br>
-                                            <a href="service.php?page=forgot_password" class="text-dark"><i
-                                                    class="fas fa-lock-open"></i> ลืมรหัสผ่าน ??</a>
                                         </div>
                                     </form>
                                 </div>

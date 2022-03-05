@@ -42,7 +42,7 @@
                                                     <td><?php echo $row1['service_date'] ?></td>
                                                     <td><?php echo $row1['computer_name'] ?></td>
                                                     <?php 
-                                                    if($row1['officer_fristname'] && $row1['officer_lastname'] == ' '){
+                                                    if($row1['officer_id'] == ''){
                                                         echo '<td>รอดำเนินการ</td>';
                                                     }else{
                                                         echo '<td>'.$row1['officer_fristname'].''.$row1['officer_lastname'].'</td>';
@@ -56,8 +56,18 @@
                                                     }
                                                         ?>
                                                     <td class="text-center">
-                                                        <button type="button" class="btn btn-success view_data" data-toggle="modal" data-target="#officer_modal" id="<?php echo $row1['status_name_th'] ?>">ตรวจสอบ</button>
-                                                        <a href="" class="btn btn-danger">ลบรายการ</a>
+                                                        <?php 
+                                                        if($row1['status_name_th'] == 'ประเมินการซ่อม'){
+                                                           echo '<a href="service.php?detail=view-service&id='.$row1['service_id'].'" class="btn btn-success mr-2">ตรวจสอบ</a>';
+                                                           echo '<a href="service.php?action=confrim-delete-service&id='.$row1['service_id'].'" class="btn btn-danger">ลบรายการ</a>';
+                                                        }else if($row1['status_name_th'] == 'กำลังซ่อม'){
+                                                           echo '<a href="service.php?detail=view-service&id='.$row1['service_id'].'" class="btn btn-success mr-2">ตรวจสอบ</a>';
+                                                           echo '<a href="service.php?action=confrim-delete-service&id='.$row1['service_id'].'" class="btn btn-danger disabled">ลบรายการ</a>';
+                                                        }else if($row1['status_name_th'] == 'ซ่อมสำเร็จ'){
+                                                            echo '<a href="service.php?detail=view-service&id='.$row1['service_id'].'" class="btn btn-success mr-2">ตรวจสอบ</a>';
+                                                            echo '<a href="service.php?action=confrim-delete-service&id='.$row1['service_id'].'" class="btn btn-danger disabled">ลบรายการ</a>';
+                                                         }
+                                                        ?>
                                                     </td>
                                                 </tr>
                                                 <?php

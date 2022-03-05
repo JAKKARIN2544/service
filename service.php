@@ -1,7 +1,7 @@
 <?php
     //echo '<pre>';
     //print_r($_GET);
-        if(isset($_GET['page'])){
+        if(isset($_GET['page']) && !empty($_GET['page'])){
             if($_GET['page'] == 'users'){
                 require_once 'page/singIn_users.php';
             }else if($_GET['page'] == 'officer'){
@@ -12,6 +12,8 @@
                 require_once 'page/singUp_users.php';
             }else if($_GET['page'] == 'forgot_password'){
                 require_once 'page/forgot_password.php';
+            }else if($_GET['page'] == 'reportAll'){
+                require_once 'page/report_system.php';
             }else{
                 require_once 'index.php';
             }
@@ -149,6 +151,8 @@
                     require_once 'config/SQL/confrim_delete_users.php';
             }else if($_GET['action'] == ('confrim-delete-sp')){
                     require_once 'config/SQL/confrim_delete_sp.php';
+            }else if($_GET['action'] == ('confrim-delete-service')){
+                    require_once 'config/SQL/confrim_del_service.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_admin";
@@ -161,6 +165,8 @@
                 require_once 'config/SQL/delete_users.php';
             }else if($_GET['delete'] == MD5('spare_part')){
                 require_once 'config/SQL/delete_spare_part.php';
+            }else if($_GET['delete'] == MD5('del-service')){
+                require_once 'config/SQL/del_service.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_admin";
@@ -251,6 +257,26 @@
         }else if(isset($_GET['follow'])){
             if($_GET['follow'] == ('job')){
                 require 'page/follow_job.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_users";
+                    </script>';
+            }
+        }else if(isset($_GET['report'])){
+            if($_GET['report'] == ('report-users')){
+                require 'page/report_users.php';
+            }else if($_GET['report'] == ('success')){
+                require_once 'page/view_success_service.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_users";
+                    </script>';
+            }
+        }else if(isset($_GET['detail'])){
+            if($_GET['detail'] == ('view-service')){
+                require 'page/view_follow_service.php';
+            }else if($_GET['detail'] == ('view-cancel-service')){
+                    require 'page/view_cancel_service.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_users";
