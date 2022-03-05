@@ -43,7 +43,8 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <div class="row">
-                                            <h1>รายการซ่อมทั้งหมด <?php echo $row_cau['COUNT(service_id)'] ?> รายการ</h1>
+                                            <h1>รายการซ่อมทั้งหมด <?php echo $row_cau['COUNT(service_id)'] ?> รายการ
+                                            </h1>
                                         </div>
                                         <div class="row">
                                             <canvas id="myChart1" width="auto" height="auto"></canvas>
@@ -64,7 +65,8 @@
                                                 <!-- small box -->
                                                 <div class="small-box bgusers3">
                                                     <div class="inner">
-                                                        <h3><?php echo $row_cus4['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+                                                        <h3><?php echo $row_cus4['COUNT(service_id)'] ?><sup
+                                                                style="font-size: 20px"> รายการ</sup></h3>
 
                                                         <p>รอประเมินการซ่อม</p>
                                                     </div>
@@ -79,7 +81,8 @@
                                                 <!-- small box -->
                                                 <div class="small-box bgusers2">
                                                     <div class="inner">
-                                                        <h3><?php echo $row_cus3['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+                                                        <h3><?php echo $row_cus3['COUNT(service_id)'] ?><sup
+                                                                style="font-size: 20px"> รายการ</sup></h3>
                                                         <p>ซ่อม สำเร็จ</p>
                                                     </div>
                                                     <div class="icon">
@@ -95,12 +98,13 @@
                                                 <!-- small box -->
                                                 <div class="small-box bgusers1">
                                                     <div class="inner">
-                                                        <h3><?php echo $row_cus1['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+                                                        <h3><?php echo $row_cus1['COUNT(service_id)'] ?><sup
+                                                                style="font-size: 20px"> รายการ</sup></h3>
 
                                                         <p>กำลังดำเนินการซ่อม</p>
                                                     </div>
                                                     <div class="icon">
-                                                    <i class="fas fa-wrench"></i>
+                                                        <i class="fas fa-wrench"></i>
                                                     </div>
                                                     <a class="small-box-footer"><br></a>
                                                 </div>
@@ -110,11 +114,12 @@
                                                 <!-- small box -->
                                                 <div class="small-box bgusers4">
                                                     <div class="inner">
-                                                        <h3><?php echo $row_cus2['COUNT(service_id)'] ?><sup style="font-size: 20px"> รายการ</sup></h3>
+                                                        <h3><?php echo $row_cus2['COUNT(service_id)'] ?><sup
+                                                                style="font-size: 20px"> รายการ</sup></h3>
                                                         <p>ยกเลิกการซ่อม</p>
                                                     </div>
                                                     <div class="icon">
-                                                    <i class="fas fa-times"></i>
+                                                        <i class="fas fa-times"></i>
                                                     </div>
                                                     <a class="small-box-footer"><br></a>
                                                 </div>
@@ -127,6 +132,22 @@
                             </div><!-- /.card-body -->
                     </div>
                     <!-- /.card -->
+            </section>
+            <section class="col-lg-12 connectedSortable">
+                <!-- Custom tabs (Charts with tabs)-->
+                <div class="card">
+                    <div class="card-body">
+                    <div class="card-header">
+                                รายการแจ้งซ่อม แต่ละเดือน
+                            </div>
+                        <div class="tab-content p-0">
+                            <div class="row">
+                                <canvas id="myChart2" width="500" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /.card-body -->
+                </div>
+                <!-- /.card -->
             </section>
             <!-- right col -->
         </div>

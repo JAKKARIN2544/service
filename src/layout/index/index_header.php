@@ -1,4 +1,5 @@
 <?php require_once 'config/ConnectDB/connect.php'?>
+<?php require_once 'config/SQL/select_indexSQL.php'?>
 <?php require_once 'config/SQL/select_department.php'?>
 <!DOCTYPE html>
 <html lang="en">

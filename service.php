@@ -91,6 +91,8 @@
                 require_once 'config/SQL/add_spare_part.php';
             }else if($_GET['add'] == MD5('remaining')){
                 require_once 'config/SQL/add_remaining.php';
+            }else if($_GET['add'] == MD5('job')){
+                require_once 'config/SQL/add_job.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_admin";
@@ -246,7 +248,14 @@
                         window.location.href = "service.php?Home=index_admin";
                     </script>';
             }
-
+        }else if(isset($_GET['follow'])){
+            if($_GET['follow'] == ('job')){
+                require 'page/follow_job.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_users";
+                    </script>';
+            }
 
 
         }else{

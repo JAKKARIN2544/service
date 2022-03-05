@@ -12,13 +12,6 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="col-md-12">
-                    
-                    <!-- /.card -->
-                </div>
-            </div>
-            <!-- /.content-header -->
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -26,39 +19,48 @@
                         <!-- Left col -->
                         <section class="col-lg-12 connectedSortable">
                             <!-- Custom tabs (Charts with tabs)-->
-                            <div class="card">
+                            <div class="card mt-3">
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <table id="example" class="display responsive nowrap" style="width:100%">
                                             <thead class="text-center">
                                                 <tr>
-                                                    <th>รหัสการแจ้งซ่อม</th>
                                                     <th>วันที่แจ้งซ่อม</th>
-                                                    <th>แจ้งซ่อมโดย</th>
-                                                    <th>รับงานซ่อม โดย</th>
+                                                    <th>ชื่อผู้แจ้งซ่อม</th>
+                                                    <th>อุปกรณ์ที่ส่งซ่อม</th>
+                                                    <th>สถานะการซ่อม</th>
                                                     <th>การจัดการ</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                if (mysqli_num_rows($query_list_service) >= 0) {
+                                                if (mysqli_num_rows($result_job) >= 0) {
                                                     // output data of each row
-                                                    while ($row_list_service = mysqli_fetch_assoc($query_list_service)) {
+                                                    while ($row = mysqli_fetch_assoc($result_job)) {
                                                 ?>
                                                 <tr class="text-center">
-                                                    <td><?php echo $row_list_service['service_id'] ?></td>
-                                                    <td><?php echo $row_list_service['service_date'] ?></td>
-                                                    <td><?php echo $row_list_service['frist_name'].' '.$row_list_service['last_name'] ?></td>
-                                                    <td><?php echo $row_list_service['officer_fristname'].' '.$row_list_service['officer_lastname'] ?></td>
+                                                    <td><?php echo $row['service_date'] ?></td>
+                                                    <td><?php echo $row['frist_name'].' '.$row['last_name'] ?></td>
+                                                    <td><?php echo $row['computer_name'] ?></td>
+                                                    <?php
+                                                    if($row['status_name_th'] == 'กำลังซ่อม'){
+                                                        echo '<td class="text-primary"><i class="fas fa-cog fa-spin"></i> '.$row['status_name_th'].'</td>';
+                                                    } else{
+                                                        echo '<td class="text-warning"><i class="fas fa-spinner fa-spin"></i> '.$row['status_name_th'].'</td>';
+                                                    }
+                                                        ?>
                                                     <td class="text-center">
-                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#service_modal" id="<?php echo $row_list_service['service_id'] ?>">รายละเอียด</button>
-                                                        <a class="btn btn-success" href="">รับซ่อม</a>
+                                                        <a href="service.php?add=<?php echo MD5('job') ?>&id=<?php echo $row['service_id'] ?> " class="btn btn-primary">รับงานซ่อม</a>
+                                                        <button type="button" class="btn btn-secondary view_data"
+                                                            data-toggle="modal" data-target="#officer_modal"
+                                                            id="<?php echo $row['status_name_th'] ?>">รายละเอียด</button>
+                                                        
                                                     </td>
                                                 </tr>
                                                 <?php
                                                     }
                                                 } else {
-                                                    //echo "0 results";
+                                                    echo "0 results";
                                                 }
                                                 ?>
                                             </tbody>

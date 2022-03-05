@@ -13,8 +13,13 @@
         <!-- Navbar Search -->
         <li class="nav-item">
             <p class="nav-link text-dark">
-                <img src="assets/dist/img/avatar/avatar7.png" alt="" class="brand-image img-circle elevation-0 mb-1"
-                    style="opacity: 1; width: 30px;">
+            <?php 
+                if($row2['gender'] == 'ชาย'){
+                        echo '<img src="assets/dist/img/avatar/avatar7.png" alt="" class="brand-image img-circle elevation-0 mb-1" style="opacity: 1; width: 30px;">';
+                }else{
+                    echo '<img src="assets/dist/img/avatar/avatar3.png" alt="" class="brand-image img-circle elevation-0 mb-1" style="opacity: 1; width: 30px;">';
+                }
+            ?>
                 <span>ยินดีต้อนรับ คุณ.</span><span class="text-primary"> <?php echo  $row2['frist_name']; ?></span>
             </p>
         </li>
@@ -32,8 +37,13 @@
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="avatar text-center mt-3">
-            <img src="assets/dist/img/avatar/avatar7.png" class="brand-image img-circle elevation-3" alt="User Image"
-                width="58px">
+            <?php 
+                if($row2['gender'] == 'ชาย'){
+                        echo '<img src="assets/dist/img/avatar/avatar7.png" class="brand-image img-circle elevation-3" alt="User Image" width="58px">';
+                }else{
+                    echo '<img src="assets/dist/img/avatar/avatar3.png" class="brand-image img-circle elevation-3" alt="User Image" width="58px">';
+                }
+            ?>
         </div>
         <div class="user-panel mt-1 text-center">
             <div class="info">

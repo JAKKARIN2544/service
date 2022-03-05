@@ -38,15 +38,15 @@
                                                     <div class="container ml-3 mr-3 mb-3">
                                                         <h3 class="mt-3 text-bg">รายการซ่อม</h3>
                                                         <h5 class="text-bg">รายการแจ้งซ่อมทั้งหมด</h5>
-                                                        <h1 class="mt-5 mb-3 text-white ">600 รายการ</h1>
+                                                        <h1 class="mt-5 mb-3 text-white "><?php echo $row_csa['COUNT(service_id)']?> รายการ</h1>
                                                         <span class="mr-3 text-dark text-bg"><i
-                                                                class="fas fa-cog fa-spin"></i> รับซ่อม (20)
+                                                                class="fas fa-cog fa-spin"></i> ประเมินการซ่อม <?php echo $row_csa1['COUNT(service_id)']?>
                                                             รายการ</span>
                                                         <span class="mr-3 text-dark text-bg"><i
-                                                                class="fas fa-cog fa-spin"></i> กำลังซ่อม (20)
+                                                                class="fas fa-cog fa-spin"></i> กำลังซ่อม <?php echo $row_csa2['COUNT(service_id)']?>
                                                             รายการ</span>
                                                         <span class="text-dark text-bg"><i
-                                                                class="fas fa-cog fa-spin"></i> ยกเลิกซ่อม (20)
+                                                                class="fas fa-cog fa-spin"></i> ยกเลิกซ่อม <?php echo $row_csa3['COUNT(service_id)']?>
                                                             รายการ</span>
                                                     </div>
                                                 </div>
@@ -57,13 +57,14 @@
                                                         <h3 class="mt-3 text-bg">รายการซ่อม วันนี้</h3>
                                                         <h5 class="text-bg">รายการแจ้งซ่อมวันที่
                                                             <?php echo date('d/m/Y');?></h5>
-                                                        <h1 class="mt-4 mb-3 text-white">20 รายการ</h1>
+                                                        <h1 class="mt-4 mb-3 text-white"><?php echo $row_cstd['COUNT(service_id)']?> รายการ</h1>
+                                                        <span class="mr-3 text-dark text-bg"><i
+                                                                class="fas fa-cog fa-spin"></i> ประเมินการซ่อม <?php echo $row_cstd1['COUNT(service_id)']?>
+                                                            รายการ</span>
                                                         <span class="mr-3 text-bg"><i class="fas fa-cog fa-spin"></i>
-                                                            รับซ่อม 20 รายการ</span>
-                                                        <span class="mr-3 text-bg"><i class="fas fa-cog fa-spin"></i>
-                                                            กำลังซ่อม 20 รายการ</span><br>
+                                                            กำลังซ่อม <?php echo $row_cstd2['COUNT(service_id)']?> รายการ</span><br>
                                                         <span class="text-bg"><i class="fas fa-cog fa-spin"></i>
-                                                            ยกเลิกซ่อม 20 รายการ</span>
+                                                            ยกเลิกซ่อม <?php echo $row_cstd3['COUNT(service_id)']?> รายการ</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -86,7 +87,7 @@
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <canvas id="myChart2" width="auto" height="auto"></canvas>
+                                        <canvas id="myChart1" width="auto" height="auto"></canvas>
                                     </div>
                                 </div>
                             </div><!-- /.card-body -->
@@ -97,12 +98,12 @@
                                 <div class="card-header">
                                     <h3 class="card-title">
                                     <i class="fas fa-chart-bar mr-1"></i>
-                                        กราฟข้อมูลสถานการซ่อมในระบบ
+                                        กราฟข้อมูลจำนวน สถานะผู้ใช้งาน
                                     </h3>
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <canvas id="myChart" width="auto" height="auto"></canvas>
+                                        <canvas id="myChart2" width="auto" height="auto"></canvas>
                                     </div>
                                 </div>
                             </div><!-- /.card-body -->
@@ -116,12 +117,12 @@
                                 <div class="card-header">
                                     <h3 class="card-title">
                                     <i class="fas fa-chart-bar mr-1"></i>
-                                        กราฟข้อมูลแจ้งซ่อม
+                                        กราฟข้อมูลแจ้งซ่อมแต่ละเดือน
                                     </h3>
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content p-0">
-                                        <canvas id="myChart5" width="auto" height="auto"></canvas>
+                                        <canvas id="myChart3" width="500" height="100"></canvas>
                                     </div>
                                 </div>
                             </div><!-- /.card-body -->

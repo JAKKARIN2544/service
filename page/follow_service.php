@@ -57,6 +57,7 @@
                                                         ?>
                                                     <td class="text-center">
                                                         <button type="button" class="btn btn-success view_data" data-toggle="modal" data-target="#officer_modal" id="<?php echo $row1['status_name_th'] ?>">ตรวจสอบ</button>
+                                                        <a href="" class="btn btn-danger">ลบรายการ</a>
                                                     </td>
                                                 </tr>
                                                 <?php

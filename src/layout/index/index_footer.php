@@ -23,6 +23,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
-<?php require_once 'src/chart/admin_chart.php'?>
+<?php require_once 'src/chart/index_chart.php'?>
 </body>
 </html>
