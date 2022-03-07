@@ -103,9 +103,9 @@
 
         $uid                = $_SESSION['id'];
         $oid                = '';
-        $end_date           = date("d-m-Y");
+        $end_date           = date("Y-m-d");
         $service_id         = 'S'.date('y').date('s').rand(0,9);
-        $date               = $_POST['date'];
+        $date               = date("Y-m-d");
         $urgency            = $_POST['urgency'];
         $computer_name      = $_POST['computer_name'];
         $computer_brand     = $_POST['computer_brand'];

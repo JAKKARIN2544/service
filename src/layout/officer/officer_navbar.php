@@ -66,24 +66,43 @@
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a href="service.php" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-toolbox"></i>
                         <p>
-                            เบิกอะไหล่
+                            อะไหล่
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="service.php?withdraw=spare_part" class="nav-link">
+                                <i class="nav-icon fas fa-toolbox"></i>
+                                <p>
+                                    เบิกอะไหล่
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="service.php?list=withdraw_spare_part" class="nav-link">
+                                <i class="fas fa-tag nav-icon"></i>
+                                <p>
+                                    รายการอะไหล่
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             ติดตามการซ่อม
-                            <span class="badge badge-warning right ml-5"> 0 NEW</span>
+                            <span class="badge badge-warning right ml-5"> <?php echo $row_fls['COUNT(service_id)']?> NEW</span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link btn-being text-primary">
+                            <a href="service.php?job=service-being" class="nav-link btn-being text-primary">
                                 <i class="fas fa-tag nav-icon"></i>
                                 <p>
                                     กำลังซ่อม
@@ -91,13 +110,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link btn-check text-success">
+                            <a href="service.php?job=service-success" class="nav-link btn-check text-success">
                                 <i class="fas fa-list-alt nav-icon"></i>
                                 <p>ซ่อมสำเร็จ</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link btn-error text-danger">
+                            <a href="service.php?job=service-cancel" class="nav-link btn-error text-danger">
                                 <i class="fas fa-times nav-icon"></i>
                                 <p>ยกเลิกการซ่อม</p>
                             </a>

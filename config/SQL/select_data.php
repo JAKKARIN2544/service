@@ -25,6 +25,31 @@ $sql_job = "SELECT tb_service_detail.service_id,tb_service_detail.service_date, 
                 WHERE officer_id = ''";
 $result_job = mysqli_query($conn, $sql_job);
 
+$scsp = "SELECT COUNT(spare_id) FROM tb_spare_part";
+$scsp = $conn->query($scsp);
+$row_scsp = mysqli_fetch_array($scsp);
+
+$sql_sp_list = "SELECT tb_spare_parts_list.sp_list_id,tb_spare_parts_list.sp_list_date,tb_spare_parts_list.spare_part_id,tb_spare_parts_list.sp_list_total, tb_spare_part.spare_name, tb_officer.officer_fristname,tb_officer.officer_lastname
+                FROM tb_spare_parts_list
+                INNER JOIN tb_spare_part
+                ON tb_spare_parts_list.spare_part_id = tb_spare_part.spare_id
+                INNER JOIN tb_officer
+                ON tb_spare_parts_list.officer_id = tb_officer.officer_id
+                WHERE tb_spare_parts_list.officer_id = '".$_SESSION['id']."'";
+$result_sp_list = mysqli_query($conn, $sql_sp_list);
+
+$fls = "SELECT COUNT(service_id) FROM tb_service_detail WHERE  officer_id = '".$_SESSION['id']."'";
+$fls = $conn->query($fls);
+$row_fls = mysqli_fetch_array($fls);
+
+$query_job_being = "SELECT tb_service_detail.*, tb_users.frist_name,tb_users.last_name,tb_status.status_name_th
+                        FROM tb_service_detail
+                        INNER JOIN tb_users
+                        ON tb_service_detail.user_id = tb_users.user_id
+                        INNER JOIN tb_status
+                        ON tb_service_detail.status = tb_status.status_name_eng
+                        WHERE   officer_id= '".$_SESSION['id']."' AND status = 'being'";
+$result_job_being = mysqli_query($conn, $query_job_being);
 
 
 

@@ -72,8 +72,8 @@
                                                         <td>REPORTALL1</td>
                                                         <td>รายงานการซ่อมทั้งหมด.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-all1" target="_blank" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานการแจ้งซ่อมทั้งหมด.pdf" class="btn btn-warning" download><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
@@ -81,8 +81,8 @@
                                                         <td>REPORTALL2</td>
                                                         <td>รายงานการซ่อมทั้งเดือน.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-all2" target="_blank" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานการซ่อมทั้งเดือน.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -103,10 +103,10 @@
                                                     <tr class="text-center">
                                                         <td>1</td>
                                                         <td>REPORTTODAY1</td>
-                                                        <td>รายงานการซ่อมวันนี้.pdf</td>
+                                                        <td>รายงานการส่งซ่อมวันนี้.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-today1" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานการส่งซ่อมวันนี้.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
@@ -114,8 +114,8 @@
                                                         <td>REPORTTODAY2</td>
                                                         <td>รายงานซ่อมกำลังซ่อมวันนี้.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-today2" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานกำลังซ่อมวันนี้.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
@@ -123,8 +123,8 @@
                                                         <td>REPORTTODAY3</td>
                                                         <td>รายงานซ่อมสำเร็จวันนี้.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-today3" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานซ่อมสำเร็จวันนี้.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
@@ -132,8 +132,8 @@
                                                         <td>REPORTTODAY4</td>
                                                         <td>รายงานยกเลิกซ่อมวันนี้.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-today4" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานยกเลิกซ่อมวันนี้.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     
@@ -157,8 +157,8 @@
                                                         <td>REPORTBEING</td>
                                                         <td>รายงานการซ่อมทั้งหมด.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-being" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานการซ่อมทั้งหมด.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
@@ -166,8 +166,8 @@
                                                         <td>REPORTSUCCESS</td>
                                                         <td>รายงานการซ่อมสำเร็จทั้งหมด.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-success" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานการซ่อมสำเร็จทั้งหมด.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
@@ -175,8 +175,8 @@
                                                         <td>REPORTCANCEL</td>
                                                         <td>รายงานการยกเลิกซ่อมทั้งหมด.pdf</td>
                                                         <td>
-                                                            <a href="" class="btn btn-success"><i class="fas fa-print"></i> พิมพ์</a>
-                                                            <a href="" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
+                                                            <a href="service.php?export=report-cancel" class="btn btn-success" target="_blank"><i class="fas fa-print"></i> พิมพ์</a>
+                                                            <a href="src/pdf/รายงานการยกเลิกซ่อมทั้งหมด.pdf" class="btn btn-warning"><i class="fas fa-cloud-download-alt"></i> ดาวน์โหลด</a>
                                                         </td>
                                                     </tr>
                                                 </tbody>

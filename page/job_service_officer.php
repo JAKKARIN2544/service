@@ -52,8 +52,8 @@
                                                     <td class="text-center">
                                                         <a href="service.php?add=<?php echo MD5('job') ?>&id=<?php echo $row['service_id'] ?> " class="btn btn-primary">รับงานซ่อม</a>
                                                         <button type="button" class="btn btn-secondary view_data"
-                                                            data-toggle="modal" data-target="#officer_modal"
-                                                            id="<?php echo $row['status_name_th'] ?>">รายละเอียด</button>
+                                                            data-toggle="modal" data-target="#job_datail_modal"
+                                                            id="<?php echo $row['service_id'] ?>">รายละเอียด</button>
                                                         
                                                     </td>
                                                 </tr>
@@ -86,7 +86,7 @@
             $('#example').DataTable({
                 language: {
                     "decimal": "",
-                    "emptyTable": "ไม่พบข้อมูล",
+                    "emptyTable": "ไม่พบข้อมูลการแจ้งซ่อม",
                     "info": "แสดง _START_ ถึง _END_ ของ _TOTAL_ รายการ",
                     "infoEmpty": "แสดง 0 ถึง 0 ของ 0 รายการ",
                     "infoFiltered": "(จาก รายการทั้งหมด _MAX_ total รายการ)",
@@ -96,7 +96,7 @@
                     "loadingRecords": "กำลังค้นหา...",
                     "processing": "กำลังค้นหา...",
                     "search": "ค้นหารายการ:",
-                    "zeroRecords": "ไม่พบข้อมูล",
+                    "zeroRecords": "ไม่พบข้อมูลการแจ้งซ่อม",
                     "paginate": {
                         "first": "หน้าแรก",
                         "last": "หน้าสุดท้าย",

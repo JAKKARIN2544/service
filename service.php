@@ -153,6 +153,8 @@
                     require_once 'config/SQL/confrim_delete_sp.php';
             }else if($_GET['action'] == ('confrim-delete-service')){
                     require_once 'config/SQL/confrim_del_service.php';
+            }else if($_GET['action'] == ('confrim-delete-sp_list')){
+                require_once 'config/SQL/confrim_delete_list_sp.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_admin";
@@ -167,6 +169,8 @@
                 require_once 'config/SQL/delete_spare_part.php';
             }else if($_GET['delete'] == MD5('del-service')){
                 require_once 'config/SQL/del_service.php';
+            }else if($_GET['delete'] == MD5('sp_list')){
+                require_once 'config/SQL/del_sp_list.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_admin";
@@ -211,6 +215,12 @@
         }else if(isset($_GET['job'])){
             if($_GET['job'] == ('service')){
                 require 'page/job_service_officer.php';
+            }else if($_GET['job'] == ('service-being')){
+                require 'page/view_job_being.php';
+            }else if($_GET['job'] == ('service-success')){
+                require 'page/view_job_success.php';
+            }else if($_GET['job'] == ('service-cancel')){
+                require 'page/view_job_cancel.php';
             }else{
                 echo '<script>
                         window.location.href = "service.php?Home=index_officer";
@@ -282,7 +292,48 @@
                         window.location.href = "service.php?Home=index_users";
                     </script>';
             }
-
+        }else if(isset($_GET['export'])){
+            if($_GET['export'] == ('report-all1')){
+                require 'config/export/report_service_all1.php';
+            }else if($_GET['export'] == ('report-all2')){
+                require 'config/export/report_service_all2.php';
+            }else if($_GET['export'] == ('report-today1')){
+                require 'config/export/report_service_today1.php';
+            }else if($_GET['export'] == ('report-today2')){
+                require 'config/export/report_service_today2.php';
+            }else if($_GET['export'] == ('report-today3')){
+                require 'config/export/report_service_today3.php';
+            }else if($_GET['export'] == ('report-today4')){
+                require 'config/export/report_service_today4.php';
+            }else if($_GET['export'] == ('report-being')){
+                require 'config/export/report_service_being.php';
+            }else if($_GET['export'] == ('report-success')){
+                require 'config/export/report_service_success.php';
+            }else if($_GET['export'] == ('report-cancel')){
+                require 'config/export/report_service_cancel.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_users";
+                    </script>';
+            }
+        }else if(isset($_GET['withdraw'])){
+            if($_GET['withdraw'] == ('spare_part')){
+                require 'page/withdraw_spare_part.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_officer";
+                    </script>';
+            }
+        }else if(isset($_GET['list'])){
+            if($_GET['list'] == ('withdraw_sp')){
+                require 'config/SQL/withdraw_sp.php';
+            }else if($_GET['list'] == ('withdraw_spare_part')){
+                require 'page/list_withdraw_spare_part.php';
+            }else{
+                echo '<script>
+                        window.location.href = "service.php?Home=index_officer";
+                    </script>';
+            }
 
         }else{
             echo '<script> 
